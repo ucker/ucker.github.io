@@ -21,6 +21,6 @@ int main()
 ```
 mathtest
 
-$\int_{a}^{b}f^{'}(x)dx=f(b)-f(a)$
+$\int_{a}^{b}f'(x)dx=f(b)-f(a)$
 
 $$\int_{a}^{b}f^{'}(x)dx=f(b)-f(a)$$
