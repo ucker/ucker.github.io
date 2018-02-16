@@ -9,7 +9,6 @@ categories: blog
 > 请先安装好[git](https://git-scm.com/downloads)，在powershell中进行操作
 
 1. 设置自己的信息
-
 ```bash
 git config --global user.mail "You Email"
 git config --global user.name "Your Name"
