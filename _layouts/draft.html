@@ -25,17 +25,4 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-<div id="gitmentContainer"></div>
-<link rel="stylesheet" href="/assets/css/default.css">
-<script src="/assets/js/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-    owner: 'ucker',
-    repo: 'ucker.github.io',
-    oauth: {
-        client_id: 'f541ec4c49e888a9bf7f',
-        client_secret: 'b55e1830a7d6445b233f32b18598b80268228f83',
-    },
-});
-gitment.render('gitmentContainer');
-</script>
+{%- comment.html -%}
