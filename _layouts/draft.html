@@ -1,6 +1,20 @@
 ---
 layout: default
 ---
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'ucker',
+    repo: 'https://github.com/ucker/ucker.github.io.git',
+    oauth: {
+        client_id: 'f541ec4c49e888a9bf7f',
+        client_secret: 'b55e1830a7d6445b233f32b18598b80268228f83',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
 <article class="draft h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="draft-subheader">
