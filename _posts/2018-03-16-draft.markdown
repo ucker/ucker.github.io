@@ -1,0 +1,8 @@
+---
+layout: draft
+title:  "Draft Test!"
+date:   2018-03-16
+categories: draft
+---
+# Draft Test
+This layout is for the blog page that I am not sure if the content of the page is correct or not.
