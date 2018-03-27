@@ -5,7 +5,7 @@ title: Ucker's Blog
 baseurl: ""
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  ucker
-
+comments: true
 # Build settings
 markdown: kramdown
 # theme: minima
@@ -23,3 +23,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+# Disqus Comments
+disqus:
+    # Leave shortname blank to disable comments site-wide.
+    # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
+    shortname: ucker
