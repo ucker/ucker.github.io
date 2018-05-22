@@ -25,7 +25,7 @@ $$
 MDP问题的最终目的为了在某种状态下做出决策，于是有
 
 $$
-d_{t}^{*}=\underset{d_{t}}{\mathrm{argmax}}\sum_{x_{t+1}}p(x_{t+1}|x_{t},d_{t})v(x_{t+1})
+d_{t}^{*}=\underset{d_{t}}{\mathrm{argmax}}\sum_{x_{t+1}}p(x_{t+1}\mid x_{t},d_{t})v(x_{t+1})
 $$
 
 ## Solution to this Problem  
@@ -33,16 +33,16 @@ $$
 这个问题可以看作是一个无穷状态的问题（虽然有终止状态，但是并不知道什么时候停止），因此需要将每个$u(x_{t})$改为$\gamma\ u(x_{t})(\gamma \in (0,1)$（这样Utility之和的上界就是一个等比数列，因此极限存在）。这时相应的Bellman's Equation变为
 
 $$
-v(s)=u(s)+\gamma \underset{d}{\mathrm{max}}\sum_{s'}p(x_{t}=s'|x_{t-1}=s,d_{t-1}=d)v(s')
+v(s)=u(s)+\gamma \underset{d}{\mathrm{max}}\sum_{s'}p(x_{t}=s'\mid x_{t-1}=s,d_{t-1}=d)v(s')
 $$
 
 做决定使用
 
 $$
-d^{*}(s)=\underset{d}{\mathrm{argmax}}\sum_{s'}p(x_{t+1}=s'|x_{t}=s,d_{t}=d)v(s')
+d^{*}(s)=\underset{d}{\mathrm{argmax}}\sum_{s'}p(x_{t+1}=s'\mid x_{t}=s,d_{t}=d)v(s')
 $$
 
-对问题的进一步分析可以知道$p(x_{t}=s'|x_{t-1}=s,d_{t-1}=d)$只能取0或1，因此$max_{d}\sum_{s'}p(x_{t}=s'|x_{t-1}=s,d_{t-1}=d)v(s')$等于由状态$s$可以到达的状态$s'$中的最大的$v(s')$。我们把转移图的邻接矩阵记为$T$，Bellman's Equation变为
+对问题的进一步分析可以知道$p(x_{t}=s'\mid x_{t-1}=s,d_{t-1}=d)$只能取0或1，因此$max_{d}\sum_{s'}p(x_{t}=s'\mid x_{t-1}=s,d_{t-1}=d)v(s')$等于由状态$s$可以到达的状态$s'$中的最大的$v(s')$。我们把转移图的邻接矩阵记为$T$，Bellman's Equation变为
 
 $$
 v(s)=u(s)+\gamma \underset{s'}{\mathrm{max}}\{T(s,s')v(s')\}
@@ -54,7 +54,7 @@ $$
 d^{*}(s)=\underset{s'}{\mathrm{argmax}}\{T(s,s')v(s')\}
 $$
 
-这个问题中$p(s'|s,d)$是已知的，要求解的是$v$（也可以看作是另外一种$u$，具体和Message Passing有关）。采用Value Iteration的方式求和，也就是对$v$不断迭代，直至收敛，下面是实现的细节。
+这个问题中$p(s'\mid s,d)$是已知的，要求解的是$v$（也可以看作是另外一种$u$，具体和Message Passing有关）。采用Value Iteration的方式求和，也就是对$v$不断迭代，直至收敛，下面是实现的细节。
 
 ## Algorithm and Code
 
