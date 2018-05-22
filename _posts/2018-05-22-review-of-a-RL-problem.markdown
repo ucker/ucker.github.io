@@ -41,7 +41,7 @@ categories: blog
   $$
   d^{*}(s)=\underset{d}{\mathrm{argmax}}\sum_{s'}p(x_{t+1}=s'|x_{t}=s,d_{t}=d)v(s')
   $$
-
+  
   对问题的进一步分析可以知道$p(x_{t}=s'|x_{t-1}=s,d_{t-1}=d)$只能取0或1，因此$max_{d}\sum_{s'}p(x_{t}=s'|x_{t-1}=s,d_{t-1}=d)v(s')$等于由状态$s$可以到达的状态$s'$中的最大的$v(s')$。我们把转移图的邻接矩阵记为$T$，Bellman's Equation变为
 
   $$
@@ -53,7 +53,7 @@ categories: blog
   $$
   d^{*}(s)=\underset{s'}{\mathrm{argmax}}\{T(s,s')v(s')\}
   $$
-
+  
   这个问题中$p(s'|s,d)$是已知的，要求解的是$v$（也可以看作是另外一种$u$，具体和Message Passing有关）。采用Value Iteration的方式求和，也就是对$v$不断迭代，直至收敛，下面是实现的细节。
 
 ## Algorithm and Code
